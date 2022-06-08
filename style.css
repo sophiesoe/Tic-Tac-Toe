@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #e63946
+}
+.select-box, .play-board, .result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+.select-box {
+    background-color: #ffffff;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    color: #e63946;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.select-box.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.select-box header {
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6394650;
+}
+
+.select-box .title {
+    font-size: 18px;
+    font-weight: 505;
+    margin: 20px 0;
+}
+
+.select-box .options {
+    display: flex;
+    width: 100%;
+}
+
+.options button {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #e63946;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover, 
+.result-box .btn button:hover {
+    transform: scale(0.96);
+}
+
+.options button.playerX {
+    margin-right: 5px;
+}
+
+.options button.playerO {
+    margin-left: 5px;
+}
+
+.play-board {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play-board.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play-board .details {
+    background-color: #ffffff;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.play-board .details .players {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+
+.play-board .details span {
+    width: 100%;
+    color: #e63946;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 7px 0;
+    text-align: center;
+    cursor: default;
+    z-index: 5;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.play-aera span {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.details span:first-child {
+    color: #fff;
+}
+
+.details .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #e63946;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.players.active span:first-child {
+    color: #e63946;
+}
+
+.players.active span:nth-child(2) {
+    color: #fff;
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.play-board .play-aera {
+    margin-top: 20px;
+}
+
+.play-board section {
+    display: flex;
+}
+
+.play-board section span {
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: #e63946;
+}
+
+.result-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.result-box.add {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box .won-txt {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-txt p {
+    font-weight: 600;
+    margin: 0 5px;
+    color: #e63946;
+}
+
+.result-box .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.result-box .btn button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #e63946;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
